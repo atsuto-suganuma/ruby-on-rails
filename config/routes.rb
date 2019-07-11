@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get 'posts/:id' => 'posts#show', as: 'post'
   # .../posts/1や.../posts/3に該当する
+  # 上記のような名前付きルートをしている場合、post_path(post)というURLを組み立てて返すメソッドが使える
 end

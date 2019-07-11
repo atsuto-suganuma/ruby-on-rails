@@ -2,6 +2,8 @@
  <!-- この下からループ処理。記事の数だけ繰り返す -->
  <% @posts.each do |post| %> 
     <p>タイトル</p>
-    <span><%= post.title %></span>
+    <span>
+        <%=link_to post.title, post_path(post.id) %>
+    </span>
  <% end %>
  <!-- ここまでループ処理 -->
