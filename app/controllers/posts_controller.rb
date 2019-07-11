@@ -28,6 +28,13 @@ class PostsController < ApplicationController
     redirect_to post_path(post.id)
   end
 
+  def destroy
+    post = Post.find(params[:id]) #データを1件取得
+    #レコードをデータベースから削除
+    post.destroy
+    redirect_to posts_path #post一覧画面へリダイレクト
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body, :image)
